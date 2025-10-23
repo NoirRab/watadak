@@ -251,7 +251,9 @@ label choices1B_common:
     call screen cockpit01
 label fotofatimaharc2:
     scene cock_pit_01
-    show fat_imah
+    show fat_imah:
+        yalign 0.5
+        xalign 0.5
     Galang "He's right. She needs me. So what if it's taboo? I will bear any suffering if it spares her hers. The red moon doesn't frighten me... but the thought of watching Fatimah in pain, powerless to stop it, terrifies me."
     jump rokokkdoang
 label rokokkdoang:
