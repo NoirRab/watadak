@@ -177,12 +177,12 @@ screen cockpit01: #hover rokok
         yanchor -15
         xpos 0.5
         ypos 0.28
-        action Jump("arc2")
+        action Play("sound", "audio/Pick Up Item_sfx.mp3"), Jump("arc2")
     imagebutton:
         idle "fud_can_idle.png"
         hover "fud_can.png"
-        xanchor 677
-        yanchor -103
+        xanchor 651
+        yanchor -120
         xpos 0.5
         ypos 0.28
         action Jump("kaleng")
@@ -209,7 +209,15 @@ screen cockpit01: #hover rokok
         yanchor 156
         xpos 0.5
         ypos 0.28
-        action Jump("Note1")
+        action Play("sound", "audio/Paper_sfx.wav"), Jump("Note1")
+    imagebutton:
+        idle "radio_idle.png"
+        hover "radio.png"
+        xanchor -67
+        yanchor 224
+        xpos 0.5
+        ypos 0.28
+        action Jump("Radio")
     imagebutton:
         idle "notde2_idle.png"
         hover "notde2.png"
@@ -217,7 +225,7 @@ screen cockpit01: #hover rokok
         yanchor 146
         xpos 0.5
         ypos 0.28
-        action Jump("Note2")
+        action Play("sound", "audio/Paper_sfx.wav"), Jump("Note2")
     imagebutton:
         idle "keluar_ga_pict_01_idle.png"
         hover "keluar_ga_pict_01.png"
@@ -225,7 +233,7 @@ screen cockpit01: #hover rokok
         yanchor 112
         xpos 0.5
         ypos 0.28
-        action [SetVariable("player_checked_fatimah_photo", True), Jump("fotofatimaharc2")]
+        action [SetVariable("player_checked_fatimah_photo", True), Play("sound", "audio/Pick Up Item_sfx.mp3"), Jump("fotofatimaharc2")]
 screen cockpit02:
     imagebutton:
         idle "rock_cock.png"
@@ -234,15 +242,23 @@ screen cockpit02:
         yanchor -15
         xpos 0.5
         ypos 0.28
-        action Jump("arc2")
+        action Play("sound", "audio/Pick Up Item_sfx.mp3"),Jump("arc2")
     imagebutton:
         idle "fud_can_idle.png"
         hover "fud_can.png"
-        xanchor 677
-        yanchor -103
+        xanchor 651
+        yanchor -120
         xpos 0.5
         ypos 0.28
         action Jump("kalengF")
+    imagebutton:
+        idle "radio_idle.png"
+        hover "radio.png"
+        xanchor -67
+        yanchor 224
+        xpos 0.5
+        ypos 0.28
+        action Jump("RadioF")
     imagebutton:
         idle "wall_et_idle.png"
         hover "wall_et.png"
@@ -266,7 +282,7 @@ screen cockpit02:
         yanchor 156
         xpos 0.5
         ypos 0.28
-        action Jump("Note1F")
+        action Play("sound", "audio/Paper_sfx.wav"), Jump("Note1F")
     imagebutton:
         idle "notde2_idle.png"
         hover "notde2.png"
@@ -274,13 +290,15 @@ screen cockpit02:
         yanchor 146
         xpos 0.5
         ypos 0.28
-        action Jump("Note2F")
+        action Play("sound", "audio/Paper_sfx.wav"), Jump("Note2")
        
 label start:
     scene black
+    play music "HorrorAmbience_01.mp3"
     Galang "This is for her. It's all for Fatimah."
     narrator "I hammered that thought into my head, a mantra to ward off my fear." 
-    narrator "Just before I killed the engine of this old car, my hand brushed against something cold next to the steering wheel: a voice recorder, a gift from the office for 'jotting down hot property ideas anywhere.' I slipped it into my pocket."
+    narrator "Just before I killed the engine of this old car, my hand brushed against something cold next to the steering wheel: a voice recorder, a gift from the office for 'jotting down hot property ideas anywhere."
+    narrator "I slipped it into my pocket."
     narrator "Who knows… Maybe out in the middle of the ocean, a brilliant idea for selling the only piece of land Fatimah inherited would come to me."
     narrator "Or perhaps, it was just to record my own voice, so I wouldn't feel so alone in the darkness we were about to cross."
     narrator "Through the car window, the pitch-black sea was already waiting. The silhouette of Mr. Mulyo, my father-in-law, stood on the pier like a statue that had grown there for centuries."
@@ -290,6 +308,7 @@ label start:
     #scene bg with fade fatimah_hospital
     narrator "She forced a smile, saying, 'Be careful, dear.'"
     scene 1 with fade
+    play sound "Oceanatnight_01.mp3"
     narrator "And now, in the boat, the night sea felt even darker, even heavier."
     #scene bg with fade bulan
     narrator "The only light came from the full moon hanging in the sky, glinting on the water's gently rippling surface."
@@ -297,7 +316,8 @@ label start:
     narrator"At the stern, Mr. Mulyo sat with his weathered body, his face etched with deep wrinkles. His hands were busy checking the rolls of the fishing line, his movements the pure reflex of an old fisherman."
     narrator "I could only sit restlessly beside him; my shirt damp, my breath short, my eyes darting back and forth between the full moon above and the ever-darkening sea below."
 
-    scene arc1_01 with Fade (3.0, 0.0, 3.0)
+    scene arc1_01 with Fade (0.6, 0.0, 0.6)
+    pause 1.0
     scene arc1_02
     Galang "Dad... About the stories... the ones where fishermen are forbidden to go to sea on a full moon... Is it—"
     scene arc1_03
@@ -333,19 +353,28 @@ label choices1B_common:
     Mulyo "Look, son, rumors could be true, but they usually aren't. Forget the stories."
     scene arc1_06
     Mulyo "What's real is that Fatimah is suffering. We are here for her. Let that be your focus."
-    scene arc1_01 with Fade (1.5, 0.0, 1.5)
-    Galang "..."
+    scene arc1_01 with Fade (1.0, 0.0, 1.0)
+    pause 1.0
+    narrator "."
+    pause 0.3
+    narrator ". ."
+    pause 0.3
+    narrator ". . ."
+    pause 0.3
     scene arc1_06
     Mulyo "Galang, fetch me my cigarettes, would you?"
     #skrip rokok
     scene cock_pit_01 with fade
+    stop sound fadeout 1.0
+    play sound "Ship Interior Ambi_04.mp3" 
     call screen cockpit01
 label fotofatimaharc2:
-    Galang "I was supposed to protect her. But now... I'm out here fishing for her life while she fights for it in that hospital room."
     scene cock_pit_01
     show fat_imah:
         yalign 0.5
         xalign 0.5
+    Galang "I was supposed to protect her. But now... I'm out here fishing for her life while she fights for it in that hospital room."
+   
     jump rokokkdoang
 label rokokkdoang:
     scene cock_pit_02
@@ -358,6 +387,10 @@ label kaleng:
 label Dompet:
     Galang "I'm not here for his wallet."
     call screen cockpit01 
+
+label Radio:
+    Galang "The radio's been dead for a while now. No use even trying it."
+    call screen cockpit01
 
 label Plastik:
     Galang "What's a plastic bag doing there?"
@@ -379,6 +412,10 @@ label DompetF:
     Galang "I'm not here for his wallet."
     call screen cockpit02 
 
+label RadioF:
+    Galang "The radio's been dead for a while now. No use even trying it."
+    call screen cockpit02
+
 label PlastikF:
     Galang "What's a plastic bag doing there?"
     call screen cockpit02
@@ -394,12 +431,16 @@ label Note2F:
 label arc2:
     Galang "Right. Better get this to him."
     scene arc1_07 with fade
+    stop sound
+    play sound "Oceanatnight_01.mp3"
     Galang "Here, your cigarettes."
     Galang "{i}He's right. She needs me. So what if it's taboo? I will bear any suffering if it spares her hers. The red moon doesn't frighten me... but the thought of watching Fatimah in pain, powerless to stop it, terrifies me.{i}"
     scene pembuka_arc2 with Fade (2.0, 0.0, 2.0)
+    pause 1.0
     scene arc2_02 with Fade (2.0, 0.0, 2.0)
-    narrator "Galang catches some fish"
+    pause 1.0
     scene arc2_03 with Fade (2.0, 0.0, 2.0)
+    pause 1.0
     scene bulan with Fade (2.0, 0.0, 2.0)
     menu:
         "Dad… The Moon… It's…":
@@ -426,18 +467,21 @@ label common:
     show mulyo 2
     Mulyo "Focus, Galang! This is what we have to do!"
     hide mulyo 2 with dissolve
-    narrator "His words offered no comfort. The old taboo clung to Galang's mind, a cold certainty that they never should have come. The ship had sailed, and there was no turning back. He was still gazing upward when a sudden, sharp scream ripped him from his thoughts."
-    #sfx brak!!!
-    scene bulan with vpunch
+    narrator "His words offered no comfort." 
+    narrator "The old taboo clung to Galang's mind, a cold certainty that they never should have come."
+    narrator "The ship had sailed, and there was no turning back. He was still gazing upward when a sudden, sharp scream ripped him from his thoughts."
+    scene bulan_geterbjir with vpunch
+    play sound "Brak_Sfx.mp3"
     Mulyo "CRAP-!"
     scene cing_pancing
     narrator "Galang jolted at the sound. He spun just in time to see Mr. Mulyo thrown off balance, his wrists snarled in a fishing line that snapped tight. An unseen force beneath the water was dragging him, pulling him relentlessly toward the railing."
     Mulyo "A little help, son! This is the one! Look at it fight! Land this, and we can turn for home right now!"
     scene cing_pancing_geterbjir with vpunch
+    play sound "FishingRod_sfx"
     Mulyo "What the hell?! It's dragging me! GALANG! HELP M—"
     narrator "He planted his feet and pulled with all his strength, but his boots slid on the slick deck His old frame staggered, balance lost for a desperate second before" 
     scene byur with vpunch
-    #sfx disini
+    play sound "Kecebur_02.mp3"
     narrator "he crashed against the side of the boat and tumbled over with a sickening thud."
     Galang "DAD-!"
 
