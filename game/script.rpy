@@ -435,13 +435,13 @@ label arc2:
     play sound "Oceanatnight_01.mp3"
     Galang "Here, your cigarettes."
     Galang "{i}He's right. She needs me. So what if it's taboo? I will bear any suffering if it spares her hers. The red moon doesn't frighten me... but the thought of watching Fatimah in pain, powerless to stop it, terrifies me.{i}"
-    scene pembuka_arc2 with Fade (2.0, 0.0, 2.0)
-    pause 1.0
-    scene arc2_02 with Fade (2.0, 0.0, 2.0)
-    pause 1.0
-    scene arc2_03 with Fade (2.0, 0.0, 2.0)
-    pause 1.0
-    scene bulan with Fade (2.0, 0.0, 2.0)
+    scene pembuka_arc2 with Fade (0.5, 0.0, 0.5)
+    pause 1.6
+    scene arc2_02 with Fade (0.5, 0.0, 0.5)
+    pause 1.6
+    scene arc2_03 with Fade (0.5, 0.0, 0.5)
+    pause 1.6
+    scene bulan with Fade (0.5, 0.0, 0.5)
     menu:
         "Dad… The Moon… It's…":
             jump choices_common1a
