@@ -477,7 +477,7 @@ label common:
     narrator "Galang jolted at the sound. He spun just in time to see Mr. Mulyo thrown off balance, his wrists snarled in a fishing line that snapped tight. An unseen force beneath the water was dragging him, pulling him relentlessly toward the railing."
     Mulyo "A little help, son! This is the one! Look at it fight! Land this, and we can turn for home right now!"
     scene cing_pancing_geterbjir with vpunch
-    play sound "FishingRod_sfx"
+    play sound "FishingRod_sfx.mp3"
     Mulyo "What the hell?! It's dragging me! GALANG! HELP M—"
     narrator "He planted his feet and pulled with all his strength, but his boots slid on the slick deck His old frame staggered, balance lost for a desperate second before" 
     scene byur with vpunch
