@@ -1,13 +1,31 @@
-screen game_over:
+screen game_over():
     modal True
-    key "K_SPACE" action [Function(reset_chest_puzzle), Hide("game_over")]
+    zorder 100
+
     frame:
-        background "#00000080"
+        background "#000000AA"
         xfill True
         yfill True
-        frame:
-            background "#FFFFFFE6"
-            xfill True
-            padding (15, 0)
+
+        vbox:
             align (0.5, 0.5)
-            text "Game Over!" color "#000000" size 34 xalign 0.5
+            spacing 20
+
+            text "GAME OVER" size 48 color "#FF0000" xalign 0.5
+            if game_over_reason:
+                text "[game_over_reason]" color "#FFFFFF" xalign 0.5
+
+            hbox:
+                spacing 40
+                align (0.5, 0.5)
+
+                textbutton "Coba Lagi" action [
+                    SetVariable("is_game_over", False),
+                    Hide("game_over"),
+                    Function(renpy.jump, last_checkpoint if last_checkpoint else "start")
+                ]
+                textbutton "Kembali ke Menu Utama" action [
+                    SetVariable("is_game_over", False),
+                    Hide("game_over"),
+                    Jump("main_menu")
+                ]

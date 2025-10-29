@@ -18,3 +18,10 @@ transform chest_unlocked_anim:
         easein 3.0 zoom 0.7
     parallel:
         easein 2.0 alpha 1.0
+
+transform shake:
+    linear 0.03 xoffset 5 yoffset -3
+    linear 0.03 xoffset -4 yoffset 2
+    linear 0.03 xoffset 3 yoffset -2
+    linear 0.03 xoffset -3 yoffset 1
+    repeat 5

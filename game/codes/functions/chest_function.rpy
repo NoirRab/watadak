@@ -1,3 +1,10 @@
+default chest_difficulty = 2
+default chest_success_count = 0
+default chest_unlock_tries = 3
+default chest_unlocked = False
+default slider_speed = 2
+default stop_slider = False
+
 init python:
     def slider_update(st):
         # SpriteManager update function. Runs when the SpriteManager needs to update.
@@ -62,10 +69,12 @@ init python:
                             # --- MODIFIKASI SELESAI ---
                         
                         if chest_unlock_tries == 0 and not chest_unlocked:
-                            # User used up all their attempts and failed. We show them the game_over screen.
-                            #Action Jump (Ending 1 atau 2)
-                            renpy.show_screen("game_over")
+                            global is_game_over, game_over_reason
+                            is_game_over = True
+                            game_over_reason = "Failed to open the chest."
                             stop_slider = True
+                            renpy.jump("show_game_over")
+
 
     def reset_chest_puzzle():
         # Function to reset the mini-game so it can be played again.
