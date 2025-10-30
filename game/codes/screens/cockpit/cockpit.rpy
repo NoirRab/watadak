@@ -10,7 +10,8 @@ screen cockpit:
         ypos 0.28
         action [
             Play("sound", "audio/Pick Up Item_sfx.mp3"), 
-            Hide("cockpit"), Call("cigarettes")
+            Hide("cockpit"), 
+            Call("cigarettes")
             ]
     imagebutton:
         idle "fud_can_idle.png"
@@ -19,7 +20,11 @@ screen cockpit:
         yanchor -120
         xpos 0.5
         ypos 0.28
-        action Call("can")
+        action [
+            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Hide("cockpit"), 
+            Call("can")
+            ]
     imagebutton:
         idle "wall_et_idle.png"
         hover "wall_et.png"
@@ -27,7 +32,11 @@ screen cockpit:
         yanchor -210
         xpos 0.5
         ypos 0.28
-        action Call("wallet")
+        action [
+            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Hide("cockpit"), 
+            Call("wallet")
+            ]
     imagebutton:
         idle "buck_trush_idle.png"
         hover "buck_trush.png"
@@ -35,7 +44,11 @@ screen cockpit:
         yanchor -260
         xpos 0.5
         ypos 0.28
-        action Call("plastic")
+        action [
+            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Hide("cockpit"), 
+            Call("plastic")
+            ]
     imagebutton:
         idle "notde1_idle.png"
         hover "notde1.png"
@@ -44,6 +57,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
+            Hide("cockpit"), 
             Play("sound", "audio/Paper_sfx.wav"), 
             Call("note_1")
             ]
@@ -54,7 +68,11 @@ screen cockpit:
         yanchor 224
         xpos 0.5
         ypos 0.28
-        action Call("radio")
+        action [
+            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Hide("cockpit"), 
+            Call("radio")
+            ]
     imagebutton:
         idle "notde2_idle.png"
         hover "notde2.png"
@@ -64,6 +82,7 @@ screen cockpit:
         ypos 0.28
         action [
             Play("sound", "audio/Paper_sfx.wav"), 
+            Hide("cockpit"), 
             Call("note_2")
             ]
     if not fatimah_photo_collected:
@@ -77,6 +96,7 @@ screen cockpit:
             sensitive not fatimah_photo_collected
             action [
                 SetVariable("fatimah_photo_collected", True),
+                Hide("cockpit"), 
                 Play("sound", "audio/Pick Up Item_sfx.mp3"),
                 Call("fatimah_image")
             ]

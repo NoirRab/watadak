@@ -63,12 +63,24 @@ label arc_4_decision_1_fish_hold_loop:
 
 
 label arc_4_decision_1_equipment_room:
-    $ visited_equipment_room = True
+    # stop audio 3
+    stop sound
+    # play audio 4
+    play sound "Ship Interior Ambi_04.mp3"
+    scene gear_room with fade
+    narrator "There's barely any room to move. The reek of rust is overwhelming."
+    call arc_4_decision_1_equipment_room_loop
+    return
+
+label arc_4_decision_1_equipment_room_loop:
+    call screen equipment_room
+    if not visited_equipment_room:
+        jump arc_4_decision_1_equipment_room_loop
     return
 
 
 label arc_4_decision_1_finish:
     scene bridge_bg
     with fade
-    Galang "I've checked both places. Now I should report back..."
+    # Galang "I've checked both places. Now I should report back..."
     return
