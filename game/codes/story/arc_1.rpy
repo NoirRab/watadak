@@ -84,6 +84,11 @@ label arc_1:
             # play audio 2
             play sound "Ship Interior Ambi_04.mp3" loop
             
-            call screen cockpit
-
+            call arc_1_cockpit_loop
             return
+
+label arc_1_cockpit_loop:
+    call screen cockpit
+    if not visited_fish_hold:
+        jump cockpit
+    return

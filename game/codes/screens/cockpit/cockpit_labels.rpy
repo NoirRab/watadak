@@ -7,31 +7,31 @@ label fatimah_image:
     
     hide fat_imah
 
-    call screen cockpit
+    return
 
 label cigarettes:
     return
 
 label can:
     Galang "He didn't even finish his meal. The fish can't wait, I suppose."
-    call screen cockpit
+    return
 
 label wallet:
     Galang "I'm not here for his wallet."
-    call screen cockpit 
+    return 
 
 label radio:
     Galang "The radio's been dead for a while now. No use even trying it."
-    call screen cockpit
+    return
 
 label plastic:
     Galang "What's a plastic bag doing there?"
-    call screen cockpit
+    return
 
 label note_1:
     Galang "... The hospital is asking for more. We need 5 million Rupiah by the end of the week or they will stop the treatment..."
-    call screen cockpit
+    return
 
 label note_2:
     Galang "... Settlement for Fatimah binti Mulyo's treatment is overdue. A final extension is granted until Sunday, 15-09-20xx. After this date, services will be suspended..."
-    call screen cockpit
+    return
