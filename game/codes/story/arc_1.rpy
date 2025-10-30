@@ -1,3 +1,5 @@
+default found_cigarettes = False
+
 label arc_1:
     scene black
     # play bgm 1
@@ -89,6 +91,6 @@ label arc_1:
 
 label arc_1_cockpit_loop:
     call screen cockpit
-    if not visited_fish_hold:
-        jump cockpit
+    if not found_cigarettes:
+        jump arc_1_cockpit_loop
     return

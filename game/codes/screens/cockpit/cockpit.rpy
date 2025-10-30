@@ -10,7 +10,7 @@ screen cockpit:
         ypos 0.28
         action [
             Play("sound", "audio/Pick Up Item_sfx.mp3"), 
-            Hide("cockpit_01"), Call("cigarettes")
+            Hide("cockpit"), Call("cigarettes")
             ]
     imagebutton:
         idle "fud_can_idle.png"

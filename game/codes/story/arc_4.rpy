@@ -5,7 +5,7 @@ label arc_4:
     # stop bgm 2
     stop music
     # play bgm 3
-    play music "Night-Stalker_Looping.ogg"
+    play music "Night-Stalker_Looping.ogg" loop
     
     scene lancar_kang with Fade (1.0, 0.0, 1.0)
     narrator "Galang scrambled to the ship's rail, his heart frantically thumping."
@@ -13,8 +13,8 @@ label arc_4:
     narrator "There was nothing. No splash, no cry, no Mr. Mulyo."
     narrator "The realization was still cold in his veins when the ship's engine gave a final, sickening rattle and went dead."
     # sfx
-    play voice "EngineDown_sfx.mp3"
     Galang "Damn it, why now…?!"
+    play sound "EngineDown_sfx.mp3"
 
     scene mesh_in
     narrator "Galang frantically checked the engine, his shuddering growing uncontrollable."

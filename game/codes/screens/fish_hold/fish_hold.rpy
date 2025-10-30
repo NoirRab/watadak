@@ -35,7 +35,6 @@ screen fish_hold:
             at tong_jatoh_button
             action [
                 SetVariable("drum_fallen", True),
-                Play("voice", "audio/Drum_sfx.mp3"), 
                 Hide("fish_hold"),
                 Call("tong_jatoh")
                 ]

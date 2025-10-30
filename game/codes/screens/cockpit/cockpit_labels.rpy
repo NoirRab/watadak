@@ -10,6 +10,7 @@ label fatimah_image:
     return
 
 label cigarettes:
+    $ found_cigarettes = True
     return
 
 label can:

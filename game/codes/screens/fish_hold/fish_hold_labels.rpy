@@ -28,9 +28,10 @@ transform tong_gong_button:
 
 label tong_jatoh:
     $ drum_fallen = True
-    Galang "A heavy \"THUNK!\" echoed through the space as the barrel rolled aside."
-    play voice "Drum_sfx.mp3"
     scene store_age_room_02 with fade
+    # sfx
+    play sound "Drum_sfx.mp3"
+    Galang "A heavy \"THUNK!\" echoed through the space as the barrel rolled aside."
     return
 
 transform tong_jatoh_button:
@@ -73,9 +74,11 @@ transform ikan_button:
 
 label jerigen:
     $ visited_fish_hold = True
-    Galang "Finally. There's the fuel canister."
-    play voice "Pick Up Item_sfx.mp3"
     scene store_age_room_03 with fade
+    # sfx
+    play sound "Pick Up Item_sfx.mp3"
+    Galang "Finally. There's the fuel canister."
+    Galang "Thank god it's full..." 
     return
 
 transform jerigen_button:

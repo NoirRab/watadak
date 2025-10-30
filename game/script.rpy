@@ -3,7 +3,7 @@ label start:
     call arc_2
     call arc_3
     if ending_choice is None:
-    call arc_4
+        call arc_4
     if ending_choice is None:
         call arc_5
     call show_ending

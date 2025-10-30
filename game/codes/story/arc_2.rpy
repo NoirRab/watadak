@@ -48,8 +48,10 @@ label arc_2:
     
     scene bulan_geterbjir with vpunch
     # sfx
-    play voice "Brak_Sfx.mp3"
+    play sound "Brak_Sfx.mp3"
     Mulyo "CRAP-!"
+    # play again audio 3
+    play sound "Oceanatnight_01.mp3" loop
     
     scene cing_pancing
     narrator "Galang jolted at the sound. He spun just in time to see Mr. Mulyo thrown off balance, his wrists snarled in a fishing line that snapped tight. An unseen force beneath the water was dragging him, pulling him relentlessly toward the railing."
@@ -57,14 +59,18 @@ label arc_2:
     
     scene cing_pancing_geterbjir with vpunch
     # sfx
-    play voice "FishingRod_sfx.mp3"
+    play sound "FishingRod_sfx.mp3"
     Mulyo "What the hell?! It's dragging me! GALANG! HELP M—"
+    # play again audio 3
+    play sound "Oceanatnight_01.mp3" loop
     narrator "He planted his feet and pulled with all his strength, but his boots slid on the slick deck His old frame staggered, balance lost for a desperate second before" 
     
     scene byur with vpunch
     # sfx
-    play voice "Kecebur_02.mp3"
+    play sound "Kecebur_02.mp3"
     narrator "he crashed against the side of the boat and tumbled over with a sickening thud."
+    # play again audio 3
+    play sound "Oceanatnight_01.mp3" loop
     Galang "DAD-!"
 
     return
