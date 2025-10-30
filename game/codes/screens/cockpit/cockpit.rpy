@@ -74,7 +74,7 @@ screen cockpit:
             yanchor 112
             xpos 0.5
             ypos 0.28
-            sensitive not player_checked_fatimah_photo
+            sensitive not fatimah_photo_collected
             action [
                 SetVariable("fatimah_photo_collected", True),
                 Play("sound", "audio/Pick Up Item_sfx.mp3"),

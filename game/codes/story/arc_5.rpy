@@ -2,7 +2,7 @@ label arc_5:
     narrator "Beberapa waktu telah berlalu... Arc 5 dimulai."
     Galang "Aku kembali ke cockpit."
         #jika player klik foto pake cokcpit 2
-    if player_checked_fatimah_photo == True:
+    if fatimah_photo_collected == True:
         scene cock_pit_02
         Galang "(Ruangan ini... terasa berbeda.)"
     else:

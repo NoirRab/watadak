@@ -25,3 +25,8 @@ transform shake:
     linear 0.03 xoffset 3 yoffset -2
     linear 0.03 xoffset -3 yoffset 1
     repeat 5
+
+transform slide_up(y_target=0.5, delay=0):
+    yalign 1.2
+    pause delay
+    easein 0.8 yalign y_target

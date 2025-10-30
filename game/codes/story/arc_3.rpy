@@ -29,7 +29,6 @@ label arc_3:
             narrator "Galang scrambled onto the gunwale and threw himself into the black, icy water."
             narrator "The cold knocked the air from his lungs."
             narrator "He fought through the waves, reaching the spot where Mr. Mulyo was just struggling, his own hands grasping blindly in the murk."
-            $ is_ending = True
             $ ending_choice = 3
             return
         "{b}Save him.{/b} Fling the nearest life buoy or rope.":
@@ -44,10 +43,11 @@ label arc_3:
         "{b}Stand still.{/b} Stand paralyzed and watch.":
             # sfx
             play voice "Klik_sfx.mp3"
-            scene per_lampung
+            scene tankgelem_bjir with vpunch
             narrator "Paralyzed, Galang could only watch the horror unfold."
             narrator "His feet were rooted to the spot, his mind screaming commands that his body refused to obey."
             narrator "He saw Mr. Mulyo's desperate eyes, his silent plea, before a wave, or something in the wave, crashed over him."
             narrator "When it receded, there was nothing but empty, churning water."
+            scene lancar_kang
             narrator "The moment for action passed. The sea grew calm. Galang stood alone on the boat, the image of Mr. Mulyo's last look seared into his memory, a ghost forever haunting his inaction."
     return
