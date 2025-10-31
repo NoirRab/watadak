@@ -86,11 +86,11 @@ label arc_1:
             # play audio 2
             play sound "Ship Interior Ambi_04.mp3" loop
             
-            call arc_1_cockpit_loop
+            call arc_1_cockpit_loop from _call_arc_1_cockpit_loop
             return
 
 label arc_1_cockpit_loop:
-    call screen cockpit
+    call screen cockpit01
     if not found_cigarettes:
         jump arc_1_cockpit_loop
     return

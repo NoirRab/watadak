@@ -10,15 +10,17 @@ label arc_2:
     Galang "{i}He's right. She needs me. So what if it's taboo? I will bear any suffering if it spares her hers. The red moon doesn't frighten me... but the thought of watching Fatimah in pain, powerless to stop it, terrifies me.{i}"
     
     scene pembuka_arc2 with Fade (0.5, 0.0, 0.5)
-    pause 1.6
+    pause 2.5
     
     scene arc2_02 with Fade (0.5, 0.0, 0.5)
-    pause 1.6
+    pause 2
     
     scene arc2_03 with Fade (0.5, 0.0, 0.5)
-    pause 1.6
+    pause 3
     
     scene bulan with Fade (0.5, 0.0, 0.5)
+    pause 2
+
     menu:
         "Dad… The Moon… It's…":
             # sfx

@@ -44,24 +44,28 @@ label arc_5:
     show screen chest_puzzle
     with fade
 
-    scene background at half_size
+    # scene background at half_size
     $ puzzle_success = renpy.call_screen("chest_puzzle")
 
-    call check_game_over
+    call check_game_over from _call_check_game_over
 
-    if not puzzle_success:
-        return
-    $ ending_choice = 1
-    show berhasil at chest_center
-
-    narrator "He gripped the wires, his knuckles white. A silent prayer formed on his lips as he touched the final connection, and-"
+    if puzzle_success:
+        # return
+        $ ending_choice = 1
+        show berhasil at chest_center
+        Galang "It work!!!"
+        narrator "He gripped the wires, his knuckles white. A silent prayer formed on his lips as he touched the final connection, and-"
     return
 
 label check_game_over:
     if is_game_over:
-        $ result = renpy.call_screen("game_over")
-        if result == "retry":
-            call arc_5
-        elif result == "exit":
-            return
+        $ ending_choice = 2
+        return
+    # else:
+
+        # $ result = renpy.call_screen("game_over")
+        # if result == "retry":
+        #     call arc_5
+        # elif result == "exit":
+        #     return
     return

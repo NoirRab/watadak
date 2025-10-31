@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("wav(e)")
+define config.name = _(".wav(e)")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -24,6 +24,9 @@ define gui.show_name = True
 ## The version of the game.
 
 define config.version = "1.0"
+
+## Fullscreen by default 
+define config.default_fullscreen = False
 
 
 ## Text that is placed on the game's about screen. Place the text between the

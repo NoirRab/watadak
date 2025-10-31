@@ -1,5 +1,5 @@
 default chest_difficulty = 2
-default chest_success_count = 0
+default chest_success_count = 1
 default chest_unlock_tries = 3
 default chest_unlocked = False
 default slider_speed = 2
@@ -45,7 +45,7 @@ init python:
                             # MODIFICATION: ane ubah biar bisa multiple successes.
                             chest_success_count += 1
  
-                            if chest_success_count >= 2:
+                            if chest_success_count >= 3:
                                 # Slider is overlapping the safe-zone for the second time. The user has successfully opened the chest.
                                 chest_unlocked = True
                                 stop_slider = True
@@ -53,7 +53,7 @@ init python:
                             else:
                                 # First successful hit. Relocate the safe zone.
                                 # You might want to play an intermediate success sound here.
-                                renpy.play("audio/succes-one.mp3", "sound")
+                                renpy.play("audio/Hotwire Success_sfx.mp3", "sound")
                                 random_x = renpy.random.randint(0, slider_bar_size[0] - safe_zone_size[0])
                                 safe_zone.x = random_x
  

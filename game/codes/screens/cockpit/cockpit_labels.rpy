@@ -1,12 +1,11 @@
 label fatimah_image:
-    scene cock_pit_01
+    scene cock_pit_02
     show fat_imah:
         yalign 0.5
         xalign 0.5
     Galang "I was supposed to protect her. But now... I'm out here fishing for her life while she fights for it in that hospital room."
     
     hide fat_imah
-
     return
 
 label cigarettes:

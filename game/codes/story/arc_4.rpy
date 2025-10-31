@@ -25,10 +25,10 @@ label arc_4:
     narrator "Then, he checked the fuel gauge and tapped the tank, hearing only a hollow, empty ring. There was nothing left."
     Galang "Okay, think. I need fuel and a fan belt. If I can manage that, I might still be able to restart the engine."
 
-    call arc_4_searching
+    call arc_4_searching from _call_arc_4_searching
 
     scene eng_gene_room_01 with fade
-    call arc_4_engine_room_loop
+    call arc_4_engine_room_loop from _call_arc_4_engine_room_loop
 
     return
         
@@ -40,11 +40,11 @@ label arc_4_searching:
             "Where should Galang go next?"
 
             "Go to the Fish Hold" if not visited_fish_hold:
-                call arc_4_fish_hold
+                call arc_4_fish_hold from _call_arc_4_fish_hold
 
             "Check the Equipment Room" if not visited_equipment_room:
-                call arc_4_equipment_room
-        call arc_4_searching
+                call arc_4_equipment_room from _call_arc_4_equipment_room
+        call arc_4_searching from _call_arc_4_searching_1
         return
     else:
         return
@@ -56,7 +56,7 @@ label arc_4_fish_hold:
     play sound "Ship Interior Ambi_04.mp3"
     scene store_age_room_01 with fade
     narrator "The damp air reeks of rust and diesel. A jumble of nets, fish boxes, and empty drums clutters the room, leaving little space to move."
-    call arc_4_fish_hold_loop
+    call arc_4_fish_hold_loop from _call_arc_4_fish_hold_loop
 
     return
 
@@ -74,7 +74,7 @@ label arc_4_equipment_room:
     play sound "Ship Interior Ambi_04.mp3"
     scene gear_room with fade
     narrator "There's barely any room to move. The reek of rust is overwhelming."
-    call arc_4_equipment_room_loop
+    call arc_4_equipment_room_loop from _call_arc_4_equipment_room_loop
     return
 
 label arc_4_equipment_room_loop:
