@@ -9,7 +9,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
-            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Play("voice", "audio/Pick Up Item_sfx.mp3"), 
             Hide("cockpit"), 
             Call("cigarettes")
             ]
@@ -21,7 +21,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
-            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Play("voice", "audio/Pick Up Item_sfx.mp3"), 
             Hide("cockpit"), 
             Call("can")
             ]
@@ -33,7 +33,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
-            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Play("voice", "audio/Pick Up Item_sfx.mp3"), 
             Hide("cockpit"), 
             Call("wallet")
             ]
@@ -45,7 +45,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
-            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Play("voice", "audio/Pick Up Item_sfx.mp3"), 
             Hide("cockpit"), 
             Call("plastic")
             ]
@@ -58,7 +58,7 @@ screen cockpit:
         ypos 0.28
         action [
             Hide("cockpit"), 
-            Play("sound", "audio/Paper_sfx.wav"), 
+            Play("voice", "audio/Paper_sfx.wav"), 
             Call("note_1")
             ]
     imagebutton:
@@ -69,7 +69,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
-            Play("sound", "audio/Pick Up Item_sfx.mp3"), 
+            Play("voice", "audio/Pick Up Item_sfx.mp3"), 
             Hide("cockpit"), 
             Call("radio")
             ]
@@ -81,7 +81,7 @@ screen cockpit:
         xpos 0.5
         ypos 0.28
         action [
-            Play("sound", "audio/Paper_sfx.wav"), 
+            Play("voice", "audio/Paper_sfx.wav"), 
             Hide("cockpit"), 
             Call("note_2")
             ]
@@ -97,6 +97,6 @@ screen cockpit:
             action [
                 SetVariable("fatimah_photo_collected", True),
                 Hide("cockpit"), 
-                Play("sound", "audio/Pick Up Item_sfx.mp3"),
+                Play("voice", "audio/Pick Up Item_sfx.mp3"),
                 Call("fatimah_image")
             ]

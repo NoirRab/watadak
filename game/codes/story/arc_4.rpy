@@ -1,5 +1,6 @@
 default visited_fish_hold = False
 default visited_equipment_room = False
+default visited_engine_room = False
 
 label arc_4:
     # stop bgm 2
@@ -24,63 +25,66 @@ label arc_4:
     narrator "Then, he checked the fuel gauge and tapped the tank, hearing only a hollow, empty ring. There was nothing left."
     Galang "Okay, think. I need fuel and a fan belt. If I can manage that, I might still be able to restart the engine."
 
-    call arc_4_decision_1
+    call arc_4_searching
+
+    scene eng_gene_room_01 with fade
+    call arc_4_engine_room_loop
 
     return
         
 
-label arc_4_decision_1:
+label arc_4_searching:
     if not (visited_fish_hold and visited_equipment_room):
         show lancar_kang_kung
         menu:
             "Where should Galang go next?"
 
             "Go to the Fish Hold" if not visited_fish_hold:
-                call arc_4_decision_1_fish_hold
+                call arc_4_fish_hold
 
             "Check the Equipment Room" if not visited_equipment_room:
-                call arc_4_decision_1_equipment_room
-        call arc_4_decision_1
-
+                call arc_4_equipment_room
+        call arc_4_searching
+        return
     else:
-        call arc_4_decision_1_finish
+        return
 
-label arc_4_decision_1_fish_hold:
+label arc_4_fish_hold:
     # stop audio 3
     stop sound
     # play audio 4
     play sound "Ship Interior Ambi_04.mp3"
     scene store_age_room_01 with fade
     narrator "The damp air reeks of rust and diesel. A jumble of nets, fish boxes, and empty drums clutters the room, leaving little space to move."
-    call arc_4_decision_1_fish_hold_loop
+    call arc_4_fish_hold_loop
+
     return
 
-label arc_4_decision_1_fish_hold_loop:
+label arc_4_fish_hold_loop:
     call screen fish_hold
     if not visited_fish_hold:
-        jump arc_4_decision_1_fish_hold_loop
+        jump arc_4_fish_hold_loop
     return
 
 
-label arc_4_decision_1_equipment_room:
+label arc_4_equipment_room:
     # stop audio 3
     stop sound
     # play audio 4
     play sound "Ship Interior Ambi_04.mp3"
     scene gear_room with fade
     narrator "There's barely any room to move. The reek of rust is overwhelming."
-    call arc_4_decision_1_equipment_room_loop
+    call arc_4_equipment_room_loop
     return
 
-label arc_4_decision_1_equipment_room_loop:
+label arc_4_equipment_room_loop:
     call screen equipment_room
     if not visited_equipment_room:
-        jump arc_4_decision_1_equipment_room_loop
+        jump arc_4_equipment_room_loop
     return
 
-
-label arc_4_decision_1_finish:
-    scene bridge_bg
-    with fade
-    # Galang "I've checked both places. Now I should report back..."
+label arc_4_engine_room_loop:
+    call screen engine_room
+    if not visited_engine_room:
+        jump arc_4_engine_room_loop
     return

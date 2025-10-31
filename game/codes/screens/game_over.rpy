@@ -1,4 +1,4 @@
-screen game_over():
+screen game_over:
     modal True
     zorder 100
 
@@ -22,10 +22,12 @@ screen game_over():
                 textbutton "Coba Lagi" action [
                     SetVariable("is_game_over", False),
                     Hide("game_over"),
-                    Function(renpy.jump, last_checkpoint if last_checkpoint else "start")
+                    Return("retry")
+                    # Function(renpy.jump, last_checkpoint if last_checkpoint else "start")
                 ]
                 textbutton "Kembali ke Menu Utama" action [
                     SetVariable("is_game_over", False),
                     Hide("game_over"),
-                    Jump("main_menu")
+                    Return("exit")
+                    # Jump("main_menu")
                 ]

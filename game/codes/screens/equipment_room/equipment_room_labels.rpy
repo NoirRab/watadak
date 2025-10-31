@@ -125,9 +125,11 @@ transform toolbox_button:
         linear 0 zoom 0.348
 
 label fanbelt:
+    $ visited_equipment_room = True
     # sfx
     play voice "Pick Up Item_sfx.mp3"
     Galang "A spare fanbelt. It looks worn, but it should hold."
+    Galang "Okay... okay, I have the fan belt."
     return
 
 transform fanbelt_button:

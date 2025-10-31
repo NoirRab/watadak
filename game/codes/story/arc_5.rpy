@@ -1,14 +1,18 @@
+default result = None
+
 label arc_5:
-    narrator "Beberapa waktu telah berlalu... Arc 5 dimulai."
-    Galang "Aku kembali ke cockpit."
-        #jika player klik foto pake cokcpit 2
+    scene eng_gene_room_02 with fade
+    narrator "He installed the new parts with shaking hands. With the fuel and fan belt in place, Galang reached for the ignition."
+    narrator "His fingers found nothing. A cold dread washed over him as he remembered that the key was in Mr. Mulyo's pocket. It was now at the bottom of the sea."
+    narrator "Desperation took over, and he pried the panel open, fumbling to hotwire the engine."
+    Galang "C'mon... Just gotta start the ship."
+
     if fatimah_photo_collected == True:
-        scene cock_pit_02
-        Galang "(Ruangan ini... terasa berbeda.)"
+        scene cock_pit_final_02
     else:
-        # Jika player DULU TIDAK klik foto, tetap pakai cockpit 1 (lama)
-        scene cock_pit_01
-        Galang "(Ruangan ini... masih sama seperti dulu.)"
+        scene cock_pit_final_01
+
+    Galang "Let's start fixing the engine"
 
     $ slider_SM = SpriteManager(update = slider_update)
     $ slider_sprites = []
@@ -37,5 +41,27 @@ label arc_5:
     $ chest_difficulty = 2
     $ chest_success_count = 0 # MODIFICATION: Added variable to track successful hits.
 
-    call screen scene_01
+    show screen chest_puzzle
+    with fade
+
+    scene background at half_size
+    $ puzzle_success = renpy.call_screen("chest_puzzle")
+
+    call check_game_over
+
+    if not puzzle_success:
+        return
+    $ ending_choice = 1
+    show berhasil at chest_center
+
+    narrator "He gripped the wires, his knuckles white. A silent prayer formed on his lips as he touched the final connection, and-"
+    return
+
+label check_game_over:
+    if is_game_over:
+        $ result = renpy.call_screen("game_over")
+        if result == "retry":
+            call arc_5
+        elif result == "exit":
+            return
     return

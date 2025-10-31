@@ -30,3 +30,15 @@ transform slide_up(y_target=0.5, delay=0):
     yalign 1.2
     pause delay
     easein 0.8 yalign y_target
+
+transform chest_center:
+    align (0.5, 0.7)
+
+transform glitch_effect:
+    linear 0.05 xoffset 5
+    linear 0.05 xoffset -5
+    linear 0.05 yoffset 5
+    linear 0.05 yoffset -5
+    linear 0.03 alpha 0.8
+    linear 0.03 alpha 1.0
+    repeat 5
